@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="theme">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="WelcomePage.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <title> Welcome to ContactsApp </title>
+  </head>
+  <body ng-app="mainApp">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="controller.js"></script>
+
+    <center>
+    <h1> <img class="logoresize" src="assets/business-card.png" alt="Loading..."> <h1>
+      <p>
+      <div ng-controller="loginCtrl">
+      <form id="LoginInfo">
+        Username: <input id="Username"> <br><br>
+        Password: <input id="Password"> <br>
+        <button class="button" type="button">Sign In!</button>
+        <button class="button" onclick="window.open('SignUpPage.html','__self');">Sign up!</button>
+
+      </form>
+      </div>
+      </p>
+    </center>
+  </body>
+
+  <script src="WelcomePage.js"> </script>
+</html>
