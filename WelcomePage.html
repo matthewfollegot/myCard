@@ -15,14 +15,16 @@
       <p>
         <center><h1> myCard </h1></center>
       <div ng-controller="loginCtrl">
-      <form action="http://10.21.233.121:5000/login", method="post">
-        Username <input type="text" id="Username"> <br>
-        Password <input type="password" id="Password"> <br>
-        <button class="button" type="submit">Sign In</button>
+        <!--action="http://10.21.233.121:5000/login", method="post" -->
+      <form >
+        Username <input type="text" id="Username"> <br><br>
+        Password <input type="password" id="Password"> <br><br>
+        <button class="button" onclick="window.open('MainHomePage.Html','__self');">Sign In</button>
         <button class="button" onclick="window.open('SignUpPage.html','__self');">Sign up</button>
         </form>
       </div>
       </p>
+    </h2>
     </center>
   </body>
 
