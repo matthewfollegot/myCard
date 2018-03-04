@@ -8,13 +8,13 @@
   </head>
   <body>
     <center> <h1> Set Up Profile </h1></center>
-    <form>
+    <form action="http://10.21.233.121:5000/createProfile" method="post">
         First Name <input type="text" name="firstName" id="firstName"><br>
         Last Name <input type="text" name="lastName" id="lastName"><br>
         Company <input type="text" name="company" id="company"><br>
         Email <input type="email" name="email" id="email"> <br>
-        Phone Number <input type="tel" name="phongiteNumber" id="phoneNumber"> <br>
-        Address <input type="text" id="address"> <br>
+        Phone Number <input type="tel" name="phoneNumber" id="phoneNumber"> <br>
+        Address <input type="text" name="address" id="address"> <br>
         <br>
     </form>
     <center><button class="button" onclick="window.open('MainHomePage.html','__self')";> Submit </button></center>

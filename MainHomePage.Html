@@ -21,15 +21,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
   <script src="MainHomePage.js"></script>
 
+<!-- My Contacts Page -->
   <div ng-controller="AppCtrl" ng-cloak>
     <div class="ext-content">
       <div ng-if='currentNavItem=="contactBook"'>
         <table ng-controller="myCtrl" border="1">
           <tr>
-            <th>First Name</th><br>
-            <th>Last Name</th><br>
-            <th>Company</th><br>
-            <th>Position</th><br>
+            <th>First Name</th> <th>Last Name</th><br>
           </tr>
           <tr ng-repeat="x in contactBook">
             <td>{{x.firstName}}</td>
@@ -37,9 +35,28 @@
             <td>{{x.company}}</td>
             <td>{{x.jobPosition}}</td>
           </tr>
+          <p id='fail'> </p>
+          <p id= "ClosingStatement"> </p>
         </table>
+        <script>
+        var app = angular.module('mainApp',[]);
+        app.controller('Values', function($scope,$http){
+          $http.get("10.21.233.121:5000/createProfile/apple")
+          .then(function(resp){
+             var contactBook = resp;
+             //TO BE ITERATED THROUGH
+          })
+          .catch(function(err){
+           getElementById('fail') = "No More Contacts";
+          })
+          .finally(function(){
+            getElementById("ClosingStatement")= "Contacts Sync Complete"
+          ;
+          });
+        });
+        </script>
       </div>
-
+<!-- Add Contacts -->
       <div ng-if='currentNavItem=="addContact"' >
         <video id="video" width="640" height="480" autoplay="true"></video>
         <button id="snap">Snap Photo</button>
@@ -65,7 +82,7 @@
           });
         </script>
       </div>
-
+<!-- Personal Profile -->
       <div ng-if='currentNavItem=="personalProfile"'>
         <img src="https://static.independent.co.uk/s3fs-public/styles/article_small/public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg" alt="ahrar">
       </div>
