@@ -2,12 +2,18 @@
   background:  linear-gradient(to bottom right, rgb(68, 140, 255), rgb(37, 247, 86));
   font-family: Comfortaa;
   height: 100%;
-  width: auto;
-  padding: 10%;
+  width: 100%;
+  padding: 5%;
+  margin: 0 auto;
+}
+
+.icon {
+  width: 20px;
+  height: auto;
 }
 
 .imageresize {
-  width: 500px;
+  width: 400px;
   height: auto;
 }
 
@@ -53,4 +59,13 @@
 .button:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+.appbody {
+  width: fit-content;
+}
+
+table, th, td {
+    border: none;
+    margin: 10px;
 }

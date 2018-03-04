@@ -11,14 +11,17 @@
     <script src="controller.js"></script>
 
     <center>
-    <h1> <img class="logoresize" src="assets/business-card.png" alt="Loading..."> <h1>
+    <h2> <img class="logoresize" src="assets/business-card.png" alt="Loading..."> <h2>
       <p>
-        <form action="http://10.21.233.121:5000/login", method="post">
-        Username: <input type="text" name="Username" id="Username"> <br>
-        Password: <input type="text" name="Password" id="Password"> <br>
-        <button class="button" type="submit"> Sign In! </button>
-      </form>
-          <button class="button" onclick="window.open('SignUpPage.html','__self');">Sign up!</button>
+      <div ng-controller="loginCtrl">
+      <form action="http://10.21.233.121:5000/login", method="post">
+        Username <input type="text" id="Username"> <br>
+        Password <input type="password" id="Password"> <br>
+        <button class="button" type="submit">Sign In</button>
+        <button class="button" onclick="window.open('SignUpPage.html','__self');">Sign up</button>
+        </form>
+      </div>
+        <button onclick="Signup()"> Sign up! </button>
       </p>
     </center>
   </body>
