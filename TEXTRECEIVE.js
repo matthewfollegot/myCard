@@ -1,2 +1,5 @@
-document.getElementById("x").innerHTML = $http.get("10.21.233.121:5000/viewcontact/10");
-console.log(x)
+var app = angular.module('mainApp',[]);
+
+app.controller('people', function($scope,$http){
+  $http.get("10.21.233.121:5000/login");
+})
