@@ -13,21 +13,14 @@
     <center>
     <h2> <img class="logoresize" src="assets/business-card.png" alt="Loading..."> <h2>
       <p>
-<<<<<<< HEAD
       <div ng-controller="loginCtrl">
-      <form id="LoginInfo">
-        Username <input type="text" id="Username"> <br><br>
-        Password <input type="password" id="Password"> <br><br>
-        <button class="button" type="button">Sign In</button>
+      <form action="http://10.21.233.121:5000/login", method="post">
+        Username <input type="text" id="Username"> <br>
+        Password <input type="password" id="Password"> <br>
+        <button class="button" type="submit">Sign In</button>
         <button class="button" onclick="window.open('SignUpPage.html','__self');">Sign up</button>
-
-=======
-        <form action="http://10.21.233.121:5000/login", method="post">
-        Username: <input type="text" name="Username" id="Username"> <br>
-        Password: <input type="text" name="Password" id="Password"> <br>
-        <input type='submit' value="Sign In!">  <br>
->>>>>>> f78395065190eb868852734a357955534f1a5bf8
-      </form>
+        </form>
+      </div>
         <button onclick="Signup()"> Sign up! </button>
       </p>
     </center>
