@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html class="theme">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="WelcomePage.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <title> Welcome to ContactsApp </title>
   </head>
-  <body ng-app="mainApp" class="theme">
+  <body ng-app="mainApp">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="controller.js"></script>
 
-
     <center>
-    <h1> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Aurora_australis_20050911.jpg/188px-Aurora_australis_20050911.jpg" alt="Loading..."> <h1>
+    <h1> <img class="logoresize" src="assets/business-card.png" alt="Loading..."> <h1>
       <p>
       <div ng-controller="loginCtrl">
       <form id="LoginInfo">
-        Username: <input id="Username"> <br>
+        Username: <input id="Username"> <br><br>
         Password: <input id="Password"> <br>
-        <button type="button" ng-click="myStyle={color:'red'}"> Sign In! </button> <br>
-        <button onclick="window.open('SignUpPage.html','__self');"> Sign up! </button>
+        <button class="button" type="button">Sign In!</button>
+        <button class="button" onclick="window.open('SignUpPage.html','__self');">Sign up!</button>
 
       </form>
       </div>

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" class="theme">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- Angular Material style sheet -->
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
   <link rel="stylesheet" href="MainHomePage.css">
+  <link rel="stylesheet" href="WelcomePage.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 </head>
 <body ng-app="navBarDemoBasicUsage" ng-cloak>
 
@@ -19,23 +22,29 @@
   <script src="MainHomePage.js"></script>
 
   <div ng-controller="AppCtrl" ng-cloak>
+    <div class="ext-content">
+      <div ng-if='currentNavItem=="page1"'>
+        <img src="https://static.independent.co.uk/s3fs-public/styles/article_small/public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg" alt="ahrar">
+      </div>
+      <div ng-if='currentNavItem=="page2"' >
+        <img class='imageresize' src="https://i.genius.com/75f355bceb163b0fd6c8abc17cbfd76d79d08b83?url=http%3A%2F%2Fstatic.giantbomb.com%2Fuploads%2Fscale_small%2F0%2F3358%2F2282421-sno1_1_.jpg" alt="Snoooooop">
+      </div>
+      <div ng-if='currentNavItem=="page3"'>
+        <img src="https://5.imimg.com/data5/KH/OJ/MY-10247618/fresh-bell-pepper-500x500.jpg" alt="Peepr">
+      </div>
+      External content for `<span>{{currentNavItem}}</span>
+    </div>
     <md-content class="md-padding">
       <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-        <md-nav-item md-nav-click="goto('page1')" name="page1">DooDoo</md-nav-item>
-        <md-nav-item md-nav-click="goto('page2')" name="page2">Page Two</md-nav-item>
-        <md-nav-item md-nav-click="goto('page3')" name="page3">Page Three</md-nav-item>
+        <md-nav-item md-nav-click="goto('page1')" name="page1"><img src="assets/contact-book-icon.png" class='icon'></img></md-nav-item>
+        <md-nav-item md-nav-click="goto('page2')" name="page2"><img src="assets/add-icon.png" class='icon'></img></md-nav-item>
+        <md-nav-item md-nav-click="goto('page3')" name="page3"><img src="assets/qr-code-icon.png" class='icon'></img></md-nav-item>
         <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
         <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
         <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
         -->
       </md-nav-bar>
-      <div class="ext-content">
-        <button> <-- </button> <br>
-        <button> Contacts </button>
-        <button>     +    </button>
-        <button> My QR </button>
-        External content for `<span>{{currentNavItem}}</span>`
-      </div>
+
     </md-content>
   </div>
 
