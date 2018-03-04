@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="WelcomePage.css">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 </head>
-<body ng-app="navBarDemoBasicUsage" ng-cloak>
+<body class="appbody" ng-app="navBarDemoBasicUsage" ng-cloak>
 
   <!-- Angular Material requires Angular.js Libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
@@ -23,30 +23,77 @@
 
   <div ng-controller="AppCtrl" ng-cloak>
     <div class="ext-content">
-      <div ng-if='currentNavItem=="page1"'>
+      <div ng-if='currentNavItem=="contactBook"'>
+        <table ng-controller="myCtrl" border="1">
+          <tr>
+            <th>First Name</th><br>
+            <th>Last Name</th><br>
+            <th>Company</th><br>
+            <th>Position</th><br>
+          </tr>
+          <tr ng-repeat="x in contactBook">
+            <td>{{x.firstName}}</td>
+            <td>{{x.lastName}}</td>
+            <td>{{x.company}}</td>
+            <td>{{x.jobPosition}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div ng-if='currentNavItem=="addContact"' >
+        <video id="video" width="640" height="480" autoplay="true"></video>
+        <button id="snap">Snap Photo</button>
+        <canvas id="canvas" width="640" height="480"></canvas>
+
+        <script>
+          var video = document.getElementById('video');
+          if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+              video.src = window.URL.createObjectURL(stream);
+              video.play();
+            });
+          }
+
+          // Elements for taking the snapshot
+          var canvas = document.getElementById('canvas');
+          var context = canvas.getContext('2d');
+          var video = document.getElementById('video');
+
+          // Trigger photo take
+          document.getElementById("snap").addEventListener("click", function() {
+            context.drawImage(video, 0, 0, 640, 480);
+          });
+        </script>
+      </div>
+
+      <div ng-if='currentNavItem=="personalProfile"'>
         <img src="https://static.independent.co.uk/s3fs-public/styles/article_small/public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg" alt="ahrar">
       </div>
-      <div ng-if='currentNavItem=="page2"' >
-        <img class='imageresize' src="https://i.genius.com/75f355bceb163b0fd6c8abc17cbfd76d79d08b83?url=http%3A%2F%2Fstatic.giantbomb.com%2Fuploads%2Fscale_small%2F0%2F3358%2F2282421-sno1_1_.jpg" alt="Snoooooop">
-      </div>
-      <div ng-if='currentNavItem=="page3"'>
-        <img src="https://5.imimg.com/data5/KH/OJ/MY-10247618/fresh-bell-pepper-500x500.jpg" alt="Peepr">
-      </div>
-      External content for `<span>{{currentNavItem}}</span>
-    </div>
+
+
+
     <md-content class="md-padding">
       <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-        <md-nav-item md-nav-click="goto('page1')" name="page1"><img src="assets/contact-book-icon.png" class='icon'></img></md-nav-item>
-        <md-nav-item md-nav-click="goto('page2')" name="page2"><img src="assets/add-icon.png" class='icon'></img></md-nav-item>
-        <md-nav-item md-nav-click="goto('page3')" name="page3"><img src="assets/qr-code-icon.png" class='icon'></img></md-nav-item>
-        <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
-        <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
-        <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
-        -->
+        <md-nav-item md-nav-click="goto('contactBook')" name="contactBook"><img src="assets/contact-book-icon.png" class='icon'></img></md-nav-item>
+        <md-nav-item md-nav-click="goto('addContact')" name="addContact"><img src="assets/add-icon.png" class='icon'></img></md-nav-item>
+        <md-nav-item md-nav-click="goto('personalProfile')" name="personalProfile"><img src="assets/profile.png" class='icon'></img></md-nav-item>
       </md-nav-bar>
 
     </md-content>
   </div>
+
+<!--
+  <script>
+  var app = angular.module("myApp", []);
+  app.controller("myCtrl", function($scope) {
+      $scope.contactBook = [
+         {
+              "firstName" : "Alfreds ",
+              "lastName" : "Futterkiste"
+          }
+      ]
+  });
+  </script> -->
 
 </body>
 </html>
