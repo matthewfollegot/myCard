@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> receive </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src = "TEXTRECEIVE.js"></script>
+  </head>
+  <body ng-app="mainApp">
+    <div ng-controller="Values">
+    <ul>
+      <h2> Data </h2>
+      <li ng-repeat="Values in Values">
+        {{Values.feild1}}
+      </li>
+    </ul>
+    </div>
+  </body>
+</html>
