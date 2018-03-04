@@ -26,16 +26,40 @@
       <div ng-if='currentNavItem=="contactBook"'>
         <table ng-controller="myCtrl" border="1">
           <tr>
-            <th>First Name</th><br>
-            <th>Last Name</th><br>
-            <th>Company</th><br>
-            <th>Position</th><br>
+            <th>James Lucas</th><br>
+            <th>Dawson </th><br>
           </tr>
-          <tr ng-repeat="x in contactBook">
-            <td>{{x.firstName}}</td>
-            <td>{{x.lastName}}</td>
-            <td>{{x.company}}</td>
-            <td>{{x.jobPosition}}</td>
+          <tr>
+            <th>ABC Inc. </th><br>
+            <th>CEO</th><br>
+            <th> 979-597-5259 </th>
+          </tr>
+          <tr>
+            <th>Larry</th><br>
+            <th>Mason </th><br>
+          </tr>
+          <tr>
+            <th> Gtes Inc. </th><br>
+            <th>Op VP</th><br>
+            <th> 949-494-5649 </th>
+          </tr>
+          <tr>
+            <th>Emily</th><br>
+            <th>Hither </th><br>
+          </tr>
+          <tr>
+            <th>arrong Inc. </th><br>
+            <th>PM</th><br>
+            <th> 145-853-4782 </th>
+          </tr>
+          <tr>
+            <th>Tine</th><br>
+            <th>Merk </th><br>
+          </tr>
+          <tr>
+            <th> Array Inc. </th><br>
+            <th>VP Finance</th><br>
+            <th> 487-589-5952 </th>
           </tr>
         </table>
       </div>
@@ -67,7 +91,25 @@
       </div>
 
       <div ng-if='currentNavItem=="personalProfile"'>
-        <img src="https://static.independent.co.uk/s3fs-public/styles/article_small/public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg" alt="ahrar">
+        Your QR:
+        <p>
+          <img src="https://cdnqrcgde.s3-eu-west-1.amazonaws.com/wp-content/uploads/2013/11/jpeg.jpg" alt="ahrar">
+        </p>
+        Your Info:
+        <p>
+          Name: <input type= "text" value= "Jackson"> <br>
+          Company: <input type= "text" value= "ABC Inc"> <br>
+          Last name: <input type= "text" value= "Ray"> <br>
+          Address: <input type= "text" value= "84 Hunny Rd"> <br>
+          Number: <input type= "text" value= "416-851-5884"> <br>
+          Email: <input type= "text" value= "Jackson@abc.ca"> <br>
+          <button onclick= "Popup()"> Update </button>
+
+          <script>
+          function Popup(){
+            alert("Info will be updated!")
+          }
+          </script>
       </div>
 
 
